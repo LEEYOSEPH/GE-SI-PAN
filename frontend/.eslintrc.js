@@ -6,7 +6,6 @@ module.exports = {
   extends: ["plugin:vue/essential", "prettier"],
   rules: {
     "no-console": "off",
-    "react/react-in-jsx-scope": "off",
     // "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     // "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
     "prettier/prettier": [
@@ -14,7 +13,7 @@ module.exports = {
       {
         singleQuote: true,
         semi: true,
-        useTabs: false,
+        useTabs: true,
         tabWidth: 2,
         trailingComma: "all",
         printWidth: 80,
