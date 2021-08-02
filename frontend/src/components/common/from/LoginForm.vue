@@ -18,32 +18,32 @@
 
 <script>
 export default {
-    data() {
-        return{
-            user_id : "",
-            user_pw : "",
+        data() {
+            return{
+                user_id : "",
+                user_pw : "",
+            }
+        },
+        methods:{
+            submitForm() {
+                try {
+                    const userData = {
+                    user_id : this.user_id,
+                    user_pw : this.user_pw
+                }
+                    console.log(userData);
+                    this.$router.push('/');
+                } catch (error) {
+                    console.log(error);
+                } finally {
+                    this.initForm();
+                }
+            },
+            initForm() {
+                this.user_id = '';
+                this.user_pw = '';
+            }
         }
-    },
-    methods:{
-        submitForm() {
-            try {
-                const userData = {
-                user_id : this.user_id,
-                user_pw : this.user_pw
-            }
-                console.log(userData);
-                 this.$router.push('/');
-            } catch (error) {
-                console.log(error);
-            } finally {
-                this.initForm();
-            }
-            
-        },
-        initForm() {
-            this.user_id = '';
-            this.user_pw = '';
-        },
 }
 </script>
 
