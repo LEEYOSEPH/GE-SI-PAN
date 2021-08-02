@@ -1,11 +1,14 @@
 <template>
   <div>
-      회원가입
+    <h1 class="page-header">회원 가입</h1>
+    <signup-form></signup-form>
   </div>
 </template>
 
 <script>
+import SignupForm from '../components/common/from/SignupForm.vue'
 export default {
+  components: { SignupForm },
 
 }
 </script>
