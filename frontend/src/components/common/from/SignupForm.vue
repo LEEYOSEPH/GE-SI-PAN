@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import {registerUser} from "../../../api/index"
+
 export default {
     data(){
         return {
@@ -30,14 +32,15 @@ export default {
         }
     },
     methods: {
-        submitForm() {
+        async submitForm() {
             try {
                 const userData = {
                 user_id : this.user_id,
                 user_pw : this.user_pw,
                 user_nickname : this.user_nickname
                 }
-            
+               const {data} = await registerUser(userData);
+               console.log(data.user_nickname);
             } catch (error) {
                 console.log(error);
             }finally {
