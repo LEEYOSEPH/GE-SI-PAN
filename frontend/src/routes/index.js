@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import LoginPage from "@/views/LoginPage.vue";
 import SignupPage from "@/views/SignupPage.vue";
 import MainPage from "@/views/MainPage.vue";
-import AddPost from "@/views/AddPost.vue";
+import AddPostPage from "@/views/AddPostPage.vue";
 
 Vue.use(VueRouter);
 
@@ -31,7 +31,7 @@ const router = new VueRouter({
     },
     {
       path: "/add",
-      component: AddPost,
+      component: AddPostPage,
     },
   ],
 });
