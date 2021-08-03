@@ -6,13 +6,10 @@
 </template>
 
 <script>
-import SignupForm from '../components/common/from/SignupForm.vue'
+import SignupForm from "../components/from/SignupForm.vue";
 export default {
   components: { SignupForm },
-
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
