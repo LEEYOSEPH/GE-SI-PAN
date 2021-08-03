@@ -4,15 +4,15 @@
       <form @submit.prevent="submitForm" class="form">
         <div>
           <label for="username">id: </label>
-          <input id="username" type="text" v-model="user_id" />
+          <input id="username" type="text" v-model="id" />
         </div>
         <div>
           <label for="password">pw: </label>
-          <input id="password" type="text" v-model="user_pw" />
+          <input id="password" type="text" v-model="password" />
         </div>
         <div>
           <label for="nickname">nickname: </label>
-          <input id="nickname" type="text" v-model="user_nickname" />
+          <input id="nickname" type="text" v-model="name" />
         </div>
         <button type="submit" class="btn">회원 가입</button>
       </form>
@@ -26,21 +26,21 @@ import { registerUser } from "../../api/index";
 export default {
   data() {
     return {
-      user_id: "",
-      user_pw: "",
-      user_nickname: "",
+      id: "",
+      password: "",
+      name: "",
     };
   },
   methods: {
     async submitForm() {
       try {
         const userData = {
-          user_id: this.user_id,
-          user_pw: this.user_pw,
-          user_nickname: this.user_nickname,
+          id: this.id,
+          password: this.password,
+          name: this.name,
         };
         const { data } = await registerUser(userData);
-        console.log(data.user_nickname);
+        console.log(data.name);
       } catch (error) {
         console.log(error);
       } finally {
@@ -48,7 +48,7 @@ export default {
       }
     },
     initForm() {
-      (this.user_id = ""), (this.user_pw = ""), (this.user_nickname = "");
+      (this.id = ""), (this.password = ""), (this.name = "");
     },
   },
 };

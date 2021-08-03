@@ -4,11 +4,11 @@
       <form class="form" @submit.prevent="submitForm">
         <div>
           <label for="username">id:</label>
-          <input type="text" id="username" v-model="user_id" />
+          <input type="text" id="username" v-model="id" />
         </div>
         <div>
           <label for="password">pw:</label>
-          <input type="password" id="password" v-model="user_pw" />
+          <input type="password" id="password" v-model="password" />
         </div>
         <button type="submit" class="btn">Login</button>
       </form>
@@ -20,28 +20,22 @@
 export default {
   data() {
     return {
-      user_id: "",
-      user_pw: "",
+      id: "",
+      password: "",
     };
   },
   methods: {
     submitForm() {
       try {
         const userData = {
-          user_id: this.user_id,
-          user_pw: this.user_pw,
+          id: this.id,
+          password: this.password,
         };
         console.log(userData);
         this.$router.push("/");
       } catch (error) {
         console.log(error);
-      } finally {
-        this.initForm();
       }
-    },
-    initForm() {
-      this.user_id = "";
-      this.user_pw = "";
     },
   },
 };
