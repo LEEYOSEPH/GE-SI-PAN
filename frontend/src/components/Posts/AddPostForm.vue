@@ -4,7 +4,7 @@
     <div class="form-wrapper">
       <form class="form" @submit.prevent="submitForm">
         <div>
-          <label for="title">Title : </label>
+          <label for="title">Title </label>
           <input id="title" type="text" v-model="title" />
         </div>
         <div class="editor">
@@ -31,4 +31,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.form {
+  width: 100%;
+  height: 100%;
+}
+</style>
